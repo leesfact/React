@@ -7,6 +7,8 @@ import { GrTest } from 'react-icons/gr';
 import { BsCardChecklist } from 'react-icons/bs';
 import { BiListCheck } from 'react-icons/bi';
 import { FaUsers } from 'react-icons/fa';
+import { FcTodoList } from 'react-icons/fc';
+
 import * as S from './style';
 import { useNavigate } from 'react-router-dom';
 
@@ -60,6 +62,12 @@ const MainAside = () => {
                     }
                 ]
               },
+              {
+                title: 'ToDoList',
+                itemId: '/todo',
+                elemBefore: () => <FcTodoList />,
+
+              }
             ]}
           />
         </aside>

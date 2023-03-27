@@ -74,7 +74,6 @@ const UserList = () => {
     const onSave = (index) => {
         setUsers(users.map(user => {
             if(user.id === index) {
-                user.modifyFlag = true;
                 return {
                     ...inputs,
                     id: user.id
