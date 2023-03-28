@@ -8,6 +8,8 @@ export const Container = css`
 
     margin: 50px auto;
     width: 900px;
+    transition: opacity 4s ease;
+    
 `;
 export const Table = css`
     border: 1px solid #dbdbdb;
@@ -19,12 +21,10 @@ export const ThAndTd = css`
     height: 40px;
     text-align: center;
 `;
-
 export const Input = css`
-
-    width: 60PX;
+    width: 60px;
     transition: width 1s ease;
     &:focus {
         width: 100px;
     }
-`;
+` 
