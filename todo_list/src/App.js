@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import MainAside from './components/Aside/MainAside/MainAside';
 import Container from './components/Container/Container';
 import Todo from './pages/Todo/Todo';
+import UserInfo from './pages/UserInfo/UserInfo';
 import { reset } from './styles/Global/reset';
 
 
@@ -16,6 +17,7 @@ function App() {
       <Container>
         <MainAside />
         <Routes>
+          <Route path="/userInfo" Component={UserInfo} />
           <Route path="/todo" Component={Todo} />
         </Routes>
       </Container>

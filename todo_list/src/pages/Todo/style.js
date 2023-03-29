@@ -1,7 +1,5 @@
 import { css } from "@emotion/react";
 
-
-
 export const main = css`
   margin: 10px auto;
   width: 550px;
@@ -22,7 +20,6 @@ export const mainTitle = css`
   margin: 20px 0px 0px 20px;
   font-size: 36px;
 `;
-
 
 export const todoInputContainer = css`
   position: relative;

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import "./style";
-
+import * as S from './style';
 
 function Todo() {
   const [todoList, setTodoList] = useState([]);
@@ -30,60 +29,38 @@ function Todo() {
   };
 
   return (
-    <div className="container">
-      <aside className="menu-aside hidden-menu">
-        <button className="menu-button">▶</button>
-
-        <header className="aside-header">
-          <h1 className="header-title">
-            <i className="fa-regular fa-calendar-check"></i>TODOLIST
-          </h1>
-        </header>
-
-        <nav className="menu-nav">
-          <ul className="menu-list">
-            <li className="menu-items">
-              <i className="fa-regular fa-user"></i>User Information
-            </li>
-            <li className="menu-items">
-              <i className="fa-regular fa-calendar"></i>To Do List
-            </li>
-          </ul>
-        </nav>
-      </aside>
-      <main className="main-container main-hidden">
-        <header className="main-header">
-          <h1 className="main-title">ToDo</h1>
-          <form onSubmit={handleAddTodo}>
-            <div className="todo-input-container">
-              <i className="fa-regular fa-file-lines"></i>
-              <input
-                type="text"
-                className="todo-input"
-                placeholder="Please enter todo..."
-                value={newTodo}
-                onChange={(event) => setNewTodo(event.target.value)}
-              />
-              <button type="submit" className="add-todo-button">
-                <i className="fa-solid fa-plus"></i>
-              </button>
-            </div>
-          </form>
-        </header>
-        <ul className="todo-content-list">
-          {todoList.map((todo, index) => (
-            <li key={index}>
-              {todo}
-              <button
-                className="delete-todo-button"
-                onClick={handleDeleteTodo}
-              >
-                <i className="fa-solid fa-trash"></i>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </main>
+    <>
+      <S.mainHeader>
+        <h1 className="main-title">ToDo</h1>
+        <form onSubmit={handleAddTodo}>
+          <div className="todo-input-container">
+            <i className="fa-regular fa-file-lines"></i>
+            <input
+              type="text"
+              className="todo-input"
+              placeholder="Please enter todo..."
+              value={newTodo}
+              onChange={(event) => setNewTodo(event.target.value)}
+            />
+            <button type="submit" className="add-todo-button">
+              <i className="fa-solid fa-plus"></i>
+            </button>
+          </div>
+        </form>
+      </S.mainHeader>
+      <S.TodoList>
+        {todoList.map((todo, index) => (
+          <li key={index}>
+            {todo}
+            <button
+              className="delete-todo-button"
+              onClick={handleDeleteTodo}
+            >
+              <i className="fa-solid fa-trash"></i>
+            </button>
+          </li>
+        ))}
+      </S.TodoList>
       {modalVisible && (
         <div className="modal-container">
           <div className="modal-section">
@@ -112,7 +89,7 @@ function Todo() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

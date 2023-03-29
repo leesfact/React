@@ -7,6 +7,7 @@ import * as S from './style';
 import { VscChecklist } from 'react-icons/vsc';
 import { BiUser } from 'react-icons/bi';
 import { CgCalendar } from 'react-icons/cg';
+import { Link } from 'react-router-dom';
 
 const MainAside = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -29,14 +30,18 @@ const MainAside = () => {
 
       <nav css={S.menuNav}>
         <ul css={S.menuList}>
-          <li css={S.menuItem}>
+        <li css={S.menuItem}>
+          <Link  to="/userInfo" css={S.menuLink} onClick={() => setIsMenuVisible(false)}>
             <BiUser css={{ marginRight: "10px"}} />
             User Information
-          </li>
-          <li css={S.menuItem}>
+          </Link>
+        </li>
+        <li css={S.menuItem}>
+          <Link to="/todo" css={S.menuLink} onClick={() => setIsMenuVisible(false)}>
             <CgCalendar css={{ marginRight: "10px"}} />
             To Do List
-          </li>
+          </Link>
+        </li>
         </ul>
       </nav>
     </aside>

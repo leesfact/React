@@ -104,3 +104,21 @@ export const menuItemIcon = css`
   font-size: 16px;
   color: white;
 `;
+
+export const menuLink = css`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  border-bottom: 1px solid #dbdbdb;
+  padding: 0px 20px;
+  height: 40px;
+  background-color: #303030;
+
+  font-size: 16px;
+  color: white;
+
+  &:hover {
+    background-color: #121212;
+  }
+`;
