@@ -1,13 +1,26 @@
+/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-export const main = css`
+export const customScrollbar = css`
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #dbdbdb;
+    border-radius: 5px;
+  }
+`;
+
+
+
+export const mainContainer = css`
   margin: 10px auto;
   width: 550px;
   height: 100%;
+`;
 
-  &.main-hidden {
-    display: none;
-  }
+export const mainHidden = css`
+  //display: none;
 `;
 
 export const mainHeader = css`
@@ -19,6 +32,7 @@ export const mainHeader = css`
 export const mainTitle = css`
   margin: 20px 0px 0px 20px;
   font-size: 36px;
+  font-weight: 700;
 `;
 
 export const todoInputContainer = css`
@@ -30,36 +44,56 @@ export const todoInputContainer = css`
   padding-right: 50px;
   width: 70%;
   height: 40px;
+  
+`;
 
-  .fa-file-lines {
-    font-size: 20px;
-    margin: 8px;
+export const fileTextIcon = css`
+  font-size: 20px;
+  font-weight: 400;
+  margin: 8px;
+  flex-shrink: 0;
+`;
+
+export const todoInput = css`
+  border: none;
+  outline: none;
+  margin-left: 70px;
+  width: calc(100% - 70px);
+  height: 100%;
+  font-size: 16px;
+  transition: margin-left 0.5s ease;
+
+  &:focus {
+    margin-left: 10px;
+    width: calc(100% - 10px);
+    background-color: #fafafa;
+  }
+`;
+
+export const addTodoButton = css`
+  position: absolute;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-weight: 900;
+  top: 50%;
+  right: 0px;
+  border: none;
+  padding: 5px 20px;
+  height: 100%;
+
+  cursor: pointer;
+  background-color: white;
+  &:hover {
+    background-color: #fafafa;
   }
 
-  input[type="text"] {
-    padding: 0 70px;
-    width: 100%;
-    height: 100%;
-    transition: padding 0.5s ease;
-
-    &:focus {
-      padding: 0px 10px;
-    }
-  }
-
-  button.add-todo-button {
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
-    right: 0px;
-
-    border: none;
-    padding: 5px 20px;
-    height: 100%;
+  &:active {
+    background-color: #f0f0f0;
   }
 `;
 
 export const todoContentList = css`
+  ${customScrollbar}
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
@@ -117,10 +151,21 @@ export const contentFooter = css`
   padding: 10px;
   padding-top: 0;
   height: 15%;
-
-  button.modify-button,
-  button.remove-button {
-    border: none;
-    padding: 5px;
-  }
 `;
+
+export const modifyButton = css`
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+  border-color: #f0f0f0;
+  background-color: white;
+`;
+
+export const removeButton = css`
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+  border-color: #f0f0f0;
+  background-color: white;
+`;
+

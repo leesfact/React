@@ -5,6 +5,9 @@ export const reset = css`
     v2.0 | 20110126
     License: none (public domain)
     */
+    * {
+        box-sizing: border-box;
+    }
 
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -25,6 +28,7 @@ export const reset = css`
         font-size: 100%;
         font: inherit;
         vertical-align: baseline;
+        
     }
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure, 
@@ -32,6 +36,7 @@ export const reset = css`
         display: block;
     }
     body {
+        margin: 0;
         line-height: 1;
     }
     ol, ul {

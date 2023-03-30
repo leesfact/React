@@ -4,7 +4,7 @@ import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
 import { Route, Routes } from 'react-router-dom';
 import MainAside from './components/Aside/MainAside/MainAside';
 import Container from './components/Container/Container';
-import Todo from './pages/Todo/Todo';
+import Todo from './pages/Todo/AddTodo/Todo';
 import UserInfo from './pages/UserInfo/UserInfo';
 import { reset } from './styles/Global/reset';
 
