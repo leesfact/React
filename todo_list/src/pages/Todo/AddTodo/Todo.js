@@ -135,9 +135,8 @@ const Todo = () => {
         <ul css={S.todoContentList}>
             {todoList.map((todoObj, index) => (
                 <li
-                    key={index}
-                    css={S.contentContainer}
-                    onClick={() => openModifyModal(index)}
+                  key={index}
+                  css={S.contentContainer}
                 >
                     <header css={S.contentHeader}>
                         <div css={S.todoDate}>{todoObj.todoDate}</div>
@@ -180,11 +179,12 @@ const Todo = () => {
             onChange={handleModifiedContentChange}
         />
         <Modal
-            isOpen={showRemoveModal}
-            type={"message"}
-            title="ToDo 삭제"
-            onOk={handleRemoveOk}
-            onCancel={handleClose}
+          isOpen={showRemoveModal}
+          type={"message"}
+          title="ToDo 삭제"
+          content={todoList[currentTodoId]?.todoContent}
+          onOk={handleRemoveOk}
+          onCancel={handleClose}
         />
     </main>
   );

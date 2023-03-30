@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import * as S from './style';
 import { FaCheck, FaTimes } from 'react-icons/fa';
 
-const Modal = ({ isOpen, type, title, todoDate, defaultValue, onOk, onCancel, onChange }) => {
+const Modal = ({ isOpen, type, title, todoDate, defaultValue, content, onOk, onCancel, onChange }) => {
   const [inputValue, setInputValue] = useState(defaultValue);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Modal = ({ isOpen, type, title, todoDate, defaultValue, onOk, onCancel, on
               onChange={handleInputChange}
             />
           )}
-          {type === 'message' && <div css={S.modalMessage}>{defaultValue}</div>}
+          {type === 'message' && <div css={S.modalMessage}>{content}</div>}
         </main>
         <footer css={S.modalFooter}>
           <button css={[S.modalFooterButton, S.okButton]} onClick={handleOk}>
